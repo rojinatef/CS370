@@ -1,0 +1,945 @@
+
+
+Part1) 
+
+[ratefime@sig4 prog5]$ javac *.java 
+[ratefime@sig4 prog5]$ java Boot
+threadOS ver 1.0:
+Type ? for help
+threadOS: a new thread (thread=Thread[Thread-3,2,main] tid=0 pid=-1)
+-->l Shell
+l Shell
+threadOS: a new thread (thread=Thread[Thread-5,2,main] tid=1 pid=0)
+shell[1]% DateServer &
+DateServer
+threadOS: a new thread (thread=Thread[Thread-7,2,main] tid=2 pid=1)
+shell[2]%  it is listening to 38126
+shell[2]% DateClient 38126
+DateClient
+threadOS: a new thread (thread=Thread[Thread-9,2,main] tid=3 pid=1)
+Mon Apr 22 22:27:33 PDT 2024
+shell[3]% 
+
+
+
+Part2)
+
+On sig 4 where CmdServer check all the time for the authorize connection
+
+ratefime@sig4 prog5]$ javac *.java 
+[ratefime@sig4 prog5]$ java Boot
+threadOS ver 1.0:
+Type ? for help
+threadOS: a new thread (thread=Thread[Thread-3,2,main] tid=0 pid=-1)
+-->l  Shell
+l  Shell
+threadOS: a new thread (thread=Thread[Thread-5,2,main] tid=1 pid=0)
+shell[1]% CmdServer &
+CmdServer
+threadOS: a new thread (thread=Thread[Thread-7,2,main] tid=2 pid=1)
+shell[2]% sig4.eecs.wsu.edu  is listening to 5000
+ Plaese waite for connection!
+cmdserver username: ratefime
+Authorized connection, now is listening to:40721
+cmdserver username: ratefime
+Authorized connection, now is listening to:35512
+cmdserver username: ratefime
+Authorized connection, now is listening to:34013
+cmdserver username: ratefime
+Authorized connection, now is listening to:36892
+cmdserver username: ratefime
+Authorized connection, now is listening to:37444
+Received 'bye' message.
+continue for a new connection
+cmdserver username: ratefime
+Authorized connection, now is listening to:39878
+Received 'bye' message.
+continue for a new connection
+cmdserver username: ratefime
+Authorized connection, now is listening to:39822
+cmdserver username: ratefime
+Authorized connection, now is listening to:37197
+cmdserver username: ratefime
+Authorized connection, now is listening to:46811
+cmdserver username: ratefime
+Authorized connection, now is listening to:34139
+cmdserver username: ratefime
+Authorized connection, now is listening to:46756
+cmdserver username: ratefime
+Authorized connection, now is listening to:41655
+
+
+
+
+
+
+On Sig1:
+
+
+[ratefime@sig1 prog5]$ java Boot
+threadOS ver 1.0:
+Type ? for help
+threadOS: a new thread (thread=Thread[Thread-3,2,main] tid=0 pid=-1)
+-->l Shell
+l Shell
+threadOS: a new thread (thread=Thread[Thread-5,2,main] tid=1 pid=0)
+shell[1]% CmdClient sig4.eecs.wsu.edu 5000
+CmdClient
+threadOS: a new thread (thread=Thread[Thread-7,2,main] tid=2 pid=1)
+the host is: sig4.eecs.wsu.edu
+cmdclient username: ratefime
+Please enter your message:
+Hello
+server response is: olleH
+Mon Apr 22 22:42:44 PDT 2024
+
+shell[2]% CmdClient sig4.eecs.wsu.edu 5000
+CmdClient
+threadOS: a new thread (thread=Thread[Thread-9,2,main] tid=3 pid=1)
+the host is: sig4.eecs.wsu.edu
+cmdclient username: ratefime
+Please enter your message:
+whoami
+server response is: ratefime
+
+Mon Apr 22 22:43:01 PDT 2024
+
+shell[3]% CmdClient sig4.eecs.wsu.edu 5000
+CmdClient
+threadOS: a new thread (thread=Thread[Thread-11,2,main] tid=4 pid=1)
+the host is: sig4.eecs.wsu.edu
+cmdclient username: ratefime
+Please enter your message:
+date
+server response is: Mon Apr 22 22:43:07 PDT 2024
+
+Mon Apr 22 22:43:07 PDT 2024
+
+shell[5]% CmdClient sig4.eecs.wsu.edu 5000
+CmdClient
+threadOS: a new thread (thread=Thread[Thread-15,2,main] tid=6 pid=1)
+the host is: sig4.eecs.wsu.edu
+cmdclient username: ratefime
+Please enter your message:
+bye
+disconnec!
+
+shell[6]% CmdClient sig4.eecs.wsu.edu 5000
+CmdClient
+threadOS: a new thread (thread=Thread[Thread-17,2,main] tid=7 pid=1)
+the host is: sig4.eecs.wsu.edu
+cmdclient username: ratefime
+Please enter your message:
+Hello again
+server response is: niaga olleH
+
+Mon Apr 22 22:43:32 PDT 2024
+
+shell[7]% CmdClient sig4.eecs.wsu.edu 5000
+CmdClient
+threadOS: a new thread (thread=Thread[Thread-19,2,main] tid=8 pid=1)
+the host is: sig4.eecs.wsu.edu
+cmdclient username: ratefime
+Please enter your message:
+echo Hello again
+server response is: Hello again
+
+Mon Apr 22 22:43:42 PDT 2024
+
+shell[8]% CmdClient sig4.eecs.wsu.edu 5000
+CmdClient
+threadOS: a new thread (thread=Thread[Thread-21,2,main] tid=9 pid=1)
+the host is: sig4.eecs.wsu.edu
+cmdclient username: ratefime
+Please enter your message:
+ls
+server response is: Boot.class
+Cache.class
+Cache$Entry.class
+CmdClient.class
+CmdClient.java
+CmdServer.class
+CmdServer$ClientHandler.class
+CmdServer.java
+DateClient.class
+DateClient.java
+DateServer.class
+DateServer.java
+Directory.class
+DISK
+Disk.class
+FileSystem.class
+FileTable.class
+FileTableEntry.class
+HelloWorld.class
+Inode.class
+Kernel.class
+Kernel_org.class
+Loader.class
+output.txt
+PingPong.class
+QueueNode.class
+Scheduler.class
+Shell.class
+SuperBlock.class
+SyncQueue.class
+SysLib.class
+TCB.class
+Test2b.class
+Test2c.class
+Test2.class
+Test2d.class
+Test2e.class
+Test3.class
+Test4.class
+Test5.class
+Test6.class
+Test7a.class
+Test7.class
+TestPingPong.class
+TestThread1.class
+TestThread2b.class
+TestThread2c.class
+TestThread2.class
+TestThread2d.class
+TestThread3.class
+
+Mon Apr 22 22:43:50 PDT 2024
+shell[9]% CmdClient sig4.eecs.wsu.edu 5000
+CmdClient
+threadOS: a new thread (thread=Thread[Thread-23,2,main] tid=10 pid=1)
+the host is: sig4.eecs.wsu.edu
+cmdclient username: ratefime
+Please enter your message:
+ls -l
+server response is: total 544
+lrwxrwxrwx 1 ratefime ratefime     34 Apr  6 17:28 Boot.class -> /opt/java/libs/cleanTOS/Boot.class
+lrwxrwxrwx 1 ratefime ratefime     35 Apr  6 17:28 Cache.class -> /opt/java/libs/cleanTOS/Cache.class
+lrwxrwxrwx 1 ratefime ratefime     41 Apr  6 17:28 Cache$Entry.class -> /opt/java/libs/cleanTOS/Cache$Entry.class
+-rw-r--r-- 1 ratefime ratefime   2670 Apr 22 22:39 CmdClient.class
+-rw-r--r-- 1 ratefime ratefime   3523 Apr 22 22:27 CmdClient.java
+-rw-r--r-- 1 ratefime ratefime   3565 Apr 22 22:39 CmdServer.class
+-rw-r--r-- 1 ratefime ratefime   2539 Apr 12 20:02 CmdServer$ClientHandler.class
+-rw-r--r-- 1 ratefime ratefime   6268 Apr 22 22:26 CmdServer.java
+-rw-r--r-- 1 ratefime ratefime   1172 Apr 22 22:39 DateClient.class
+-rw-r--r-- 1 ratefime ratefime    924 Apr 20 18:52 DateClient.java
+-rw-r--r-- 1 ratefime ratefime   1205 Apr 22 22:39 DateServer.class
+-rw-r--r-- 1 ratefime ratefime    962 Apr 16 20:19 DateServer.java
+lrwxrwxrwx 1 ratefime ratefime     39 Apr  6 17:28 Directory.class -> /opt/java/libs/cleanTOS/Directory.class
+-rw-r--r-- 1 ratefime ratefime 512000 Apr 22 22:41 DISK
+lrwxrwxrwx 1 ratefime ratefime     34 Apr  6 17:28 Disk.class -> /opt/java/libs/cleanTOS/Disk.class
+lrwxrwxrwx 1 ratefime ratefime     40 Apr  6 17:28 FileSystem.class -> /opt/java/libs/cleanTOS/FileSystem.class
+lrwxrwxrwx 1 ratefime ratefime     39 Apr  6 17:28 FileTable.class -> /opt/java/libs/cleanTOS/FileTable.class
+lrwxrwxrwx 1 ratefime ratefime     44 Apr  6 17:28 FileTableEntry.class -> /opt/java/libs/cleanTOS/FileTableEntry.class
+lrwxrwxrwx 1 ratefime ratefime     40 Apr  6 17:28 HelloWorld.class -> /opt/java/libs/cleanTOS/HelloWorld.class
+lrwxrwxrwx 1 ratefime ratefime     35 Apr  6 17:28 Inode.class -> /opt/java/libs/cleanTOS/Inode.class
+lrwxrwxrwx 1 ratefime ratefime     36 Apr  6 17:28 Kernel.class -> /opt/java/libs/cleanTOS/Kernel.class
+lrwxrwxrwx 1 ratefime ratefime     40 Apr  6 17:28 Kernel_org.class -> /opt/java/libs/cleanTOS/Kernel_org.class
+lrwxrwxrwx 1 ratefime ratefime     36 Apr  6 17:28 Loader.class -> /opt/java/libs/cleanTOS/Loader.class
+-rw-r--r-- 1 ratefime ratefime      0 Apr 22 21:30 output.txt
+lrwxrwxrwx 1 ratefime ratefime     38 Apr  6 17:28 PingPong.class -> /opt/java/libs/cleanTOS/PingPong.class
+lrwxrwxrwx 1 ratefime ratefime     39 Apr  6 17:28 QueueNode.class -> /opt/java/libs/cleanTOS/QueueNode.class
+lrwxrwxrwx 1 ratefime ratefime     39 Apr  6 17:28 Scheduler.class -> /opt/java/libs/cleanTOS/Scheduler.class
+lrwxrwxrwx 1 ratefime ratefime     35 Apr 16 17:38 Shell.class -> /opt/java/libs/cleanTOS/Shell.class
+lrwxrwxrwx 1 ratefime ratefime     40 Apr  6 17:28 SuperBlock.class -> /opt/java/libs/cleanTOS/SuperBlock.class
+lrwxrwxrwx 1 ratefime ratefime     39 Apr  6 17:28 SyncQueue.class -> /opt/java/libs/cleanTOS/SyncQueue.class
+lrwxrwxrwx 1 ratefime ratefime     36 Apr  6 17:28 SysLib.class -> /opt/java/libs/cleanTOS/SysLib.class
+lrwxrwxrwx 1 ratefime ratefime     33 Apr  6 17:28 TCB.class -> /opt/java/libs/cleanTOS/TCB.class
+lrwxrwxrwx 1 ratefime ratefime     36 Apr  6 17:28 Test2b.class -> /opt/java/libs/cleanTOS/Test2b.class
+lrwxrwxrwx 1 ratefime ratefime     36 Apr  6 17:28 Test2c.class -> /opt/java/libs/cleanTOS/Test2c.class
+lrwxrwxrwx 1 ratefime ratefime     35 Apr  6 17:28 Test2.class -> /opt/java/libs/cleanTOS/Test2.class
+lrwxrwxrwx 1 ratefime ratefime     36 Apr  6 17:28 Test2d.class -> /opt/java/libs/cleanTOS/Test2d.class
+lrwxrwxrwx 1 ratefime ratefime     36 Apr  6 17:28 Test2e.class -> /opt/java/libs/cleanTOS/Test2e.class
+lrwxrwxrwx 1 ratefime ratefime     35 Apr  6 17:28 Test3.class -> /opt/java/libs/cleanTOS/Test3.class
+lrwxrwxrwx 1 ratefime ratefime     35 Apr  6 17:28 Test4.class -> /opt/java/libs/cleanTOS/Test4.class
+lrwxrwxrwx 1 ratefime ratefime     35 Apr  6 17:28 Test5.class -> /opt/java/libs/cleanTOS/Test5.class
+lrwxrwxrwx 1 ratefime ratefime     35 Apr  6 17:28 Test6.class -> /opt/java/libs/cleanTOS/Test6.class
+lrwxrwxrwx 1 ratefime ratefime     36 Apr  6 17:28 Test7a.class -> /opt/java/libs/cleanTOS/Test7a.class
+lrwxrwxrwx 1 ratefime ratefime     35 Apr  6 17:28 Test7.class -> /opt/java/libs/cleanTOS/Test7.class
+lrwxrwxrwx 1 ratefime ratefime     42 Apr  6 17:28 TestPingPong.class -> /opt/java/libs/cleanTOS/TestPingPong.class
+lrwxrwxrwx 1 ratefime ratefime     41 Apr  6 17:28 TestThread1.class -> /opt/java/libs/cleanTOS/TestThread1.class
+lrwxrwxrwx 1 ratefime ratefime     42 Apr  6 17:28 TestThread2b.class -> /opt/java/libs/cleanTOS/TestThread2b.class
+lrwxrwxrwx 1 ratefime ratefime     42 Apr  6 17:28 TestThread2c.class -> /opt/java/libs/cleanTOS/TestThread2c.class
+lrwxrwxrwx 1 ratefime ratefime     41 Apr  6 17:28 TestThread2.class -> /opt/java/libs/cleanTOS/TestThread2.class
+lrwxrwxrwx 1 ratefime ratefime     42 Apr  6 17:28 TestThread2d.class -> /opt/java/libs/cleanTOS/TestThread2d.class
+lrwxrwxrwx 1 ratefime ratefime     41 Apr  6 17:28 TestThread3.class -> /opt/java/libs/cleanTOS/TestThread3.class
+
+Mon Apr 22 22:43:56 PDT 2024
+
+shell[10]% CmdClient sig4.eecs.wsu.edu 5000
+CmdClient
+threadOS: a new thread (thread=Thread[Thread-25,2,main] tid=11 pid=1)
+the host is: sig4.eecs.wsu.edu
+cmdclient username: ratefime
+Please enter your message:
+ps ux
+server response is: USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+ratefime 21173  0.0  0.0 113284  1412 ?        S    22:25   0:00 sh /net/ugrads/ratefime/pvt/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/bin/code-server --start-server --host=127.0.0.1 --accept-server-license-terms --enable-remote-auto-shutdown --port=0 --telemetry-level all --connection-token-file /net/ugrads/ratefime/pvt/.vscode-server/.0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2.token
+ratefime 21185  0.5  0.5 990116 89488 ?        Sl   22:25   0:06 /net/ugrads/ratefime/pvt/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/node /net/ugrads/ratefime/pvt/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/out/server-main.js --start-server --host=127.0.0.1 --accept-server-license-terms --enable-remote-auto-shutdown --port=0 --telemetry-level all --connection-token-file /net/ugrads/ratefime/pvt/.vscode-server/.0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2.token
+ratefime 21359  0.1  0.2 743652 45956 ?        Sl   22:25   0:02 /net/ugrads/ratefime/pvt/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/node /net/ugrads/ratefime/pvt/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/out/bootstrap-fork --type=ptyHost --logsPath /net/ugrads/ratefime/pvt/.vscode-server/data/logs/20240422T222519
+ratefime 21437  0.0  0.0 168132  3732 ?        S    22:25   0:00 sshd: ratefime@notty
+ratefime 21441  0.0  0.0 119664  1844 ?        Ss   22:25   0:00 -bash
+ratefime 21550  0.0  0.0 113676  2016 ?        S    22:25   0:00 bash
+ratefime 21599  0.2  0.5 1000076 87356 ?       Sl   22:25   0:03 /net/ugrads/ratefime/pvt/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/node --dns-result-order=ipv4first /net/ugrads/ratefime/pvt/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/out/bootstrap-fork --type=extensionHost --transformURIs --useHostProxy=false
+ratefime 21606  0.0  0.2 860084 36648 ?        Sl   22:25   0:00 /net/ugrads/ratefime/pvt/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/node /net/ugrads/ratefime/pvt/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/out/bootstrap-fork --type=fileWatcher
+ratefime 21784  0.0  0.0 121384  3696 pts/4    Ss+  22:25   0:00 /bin/bash --init-file /net/ugrads/ratefime/pvt/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+ratefime 22037  0.0  0.0 121384  3848 pts/5    Ss   22:26   0:00 /bin/bash --init-file /net/ugrads/ratefime/pvt/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+ratefime 23867  0.1  0.2 7173184 47092 pts/5   Sl+  22:39   0:00 java Boot
+ratefime 24484  0.0  0.0 159700  2008 pts/5    R+   22:44   0:00 ps ux
+
+Mon Apr 22 22:44:02 PDT 2024
+shell[11]% CmdClient sig4.eecs.wsu.edu 5000
+CmdClient
+threadOS: a new thread (thread=Thread[Thread-27,2,main] tid=12 pid=1)
+man the host is: sig4.eecs.wsu.edu
+cmdclient username: ratefime
+Please enter your message:
+pkill
+server response is: PGREP(1)                         User Commands                        PGREP(1)
+
+
+
+NAME
+       pgrep,  pkill  -  look  up  or signal processes based on name and other
+       attributes
+
+SYNOPSIS
+       pgrep [options] pattern
+       pkill [options] pattern
+
+DESCRIPTION
+       pgrep looks through the  currently  running  processes  and  lists  the
+       process IDs which match the selection criteria to stdout.  All the cri‐
+       teria have to match.  For example,
+
+              $ pgrep -u root sshd
+
+       will only list the processes called sshd AND owned  by  root.   On  the
+       other hand,
+
+              $ pgrep -u root,daemon
+
+       will list the processes owned by root OR daemon.
+
+       pkill  will  send  the  specified  signal  (by default SIGTERM) to each
+       process instead of listing them on stdout.
+
+OPTIONS
+       -signal
+       --signal signal
+              Defines the signal to send to each matched process.  Either  the
+              numeric or the symbolic signal name can be used.  (pkill only.)
+
+       -c, --count
+              Suppress  normal  output; instead print a count of matching pro‐
+              cesses.  When count does not match anything, e.g. returns  zero,
+              the command will return non-zero value.
+
+       -d, --delimiter delimiter
+              Sets  the  string  used to delimit each process ID in the output
+              (by default a newline).  (pgrep only.)
+
+       -f, --full
+              The pattern is normally only matched against the  process  name.
+              When -f is set, the full command line is used.
+
+       -g, --pgroup pgrp,...
+              Only  match  processes in the process group IDs listed.  Process
+              group 0 is translated into pgrep's or pkill's own process group.
+
+       -G, --group gid,...
+              Only match processes whose real group ID is listed.  Either  the
+              numerical or symbolical value may be used.
+
+       -l, --list-name
+              List the process name as well as the process ID.  (pgrep only.)
+
+       -a, --list-full
+              List  the  full  command line as well as the process ID.  (pgrep
+              only.)
+
+       -n, --newest
+              Select only the newest (most recently started) of  the  matching
+              processes.
+
+       -o, --oldest
+              Select  only the oldest (least recently started) of the matching
+              processes.
+
+       -P, --parent ppid,...
+              Only match processes whose parent process ID is listed.
+
+       -s, --session sid,...
+              Only match processes whose process session ID is  listed.   Ses‐
+              sion ID 0 is translated into pgrep's or pkill's own session ID.
+
+       -t, --terminal term,...
+              Only  match processes whose controlling terminal is listed.  The
+              terminal name should be specified without the "/dev/" prefix.
+
+       -u, --euid euid,...
+              Only match processes whose effective user ID is listed.   Either
+              the numerical or symbolical value may be used.
+
+       -U, --uid uid,...
+              Only  match  processes whose real user ID is listed.  Either the
+              numerical or symbolical value may be used.
+
+       -v, --inverse
+              Negates the matching.  This option is usually  used  in  pgrep's
+              context.   In  pkill's  context  the short option is disabled to
+              avoid accidental usage of the option.
+
+       -w, --lightweight
+              Shows all thread ids instead of pids  in  pgrep's  context.   In
+              pkill's context this option is disabled.
+
+       -x, --exact
+              Only match processes whose names (or command line if -f is spec‐
+              ified) exactly match the pattern.
+
+       -F, --pidfile file
+              Read PID's from file.  This option is perhaps  more  useful  for
+              pkill than pgrep.
+
+       -L, --logpidfile
+              Fail if pidfile (see -F) not locked.
+
+       --ns pid
+              Match  processes that belong to the same namespaces. Required to
+              run as root to match processes from other  users.  See  --nslist
+              for how to limit which namespaces to match.
+
+       --nslist name,...
+              Match  only  the provided namespaces. Available namespaces: ipc,
+              mnt, net, pid, user,uts.
+
+       -V, --version
+              Display version information and exit.
+
+       -h, --help
+              Display help and exit.
+
+OPERANDS
+       pattern
+              Specifies an Extended Regular Expression  for  matching  against
+              the process names or command lines.
+
+EXAMPLES
+       Example 1: Find the process ID of the named daemon:
+
+              $ pgrep -u root named
+
+       Example 2: Make syslog reread its configuration file:
+
+              $ pkill -HUP syslogd
+
+       Example 3: Give detailed information on all xterm processes:
+
+              $ ps -fp $(pgrep -d, -x xterm)
+
+       Example 4: Make all netscape processes run nicer:
+
+              $ renice +4 $(pgrep netscape)
+
+EXIT STATUS
+       0      One or more processes matched the criteria.
+       1      No processes matched.
+       2      Syntax error in the command line.
+       3      Fatal error: out of memory etc.
+
+NOTES
+       The  process  name  used  for  matching is limited to the 15 characters
+       present in the output of /proc/pid/stat.  Use the -f  option  to  match
+       against the complete command line, /proc/pid/cmdline.
+
+       The running pgrep or pkill process will never report itself as a match.
+
+BUGS
+       The  options  -n and -o and -v can not be combined.  Let me know if you
+       need to do this.
+
+       Defunct processes are reported.
+
+
+SEE ALSO
+       ps(1), regex(7), signal(7), killall(1), skill(1), kill(1), kill(2)
+
+STANDARDS
+       pkill and pgrep were introduced in Sun's Solaris 7.   This  implementa‐
+       tion is fully compatible.
+
+AUTHOR
+       Kjetil Torgrim Homme ⟨kjetilho@ifi.uio.no⟩
+
+REPORTING BUGS
+       Please send bug reports to ⟨procps@freelists.org⟩
+
+
+
+procps-ng                        October 2012                         PGREP(1)
+
+Mon Apr 22 22:44:09 PDT 2024
+shell[12]% die
+die
+shell[13]% exit 
+exit
+-->q
+q
+[ratefime@sig1 prog5]$ 
+
+
+
+
+
+The whole in a one sig machine:
+
+[ratefime@sig4 prog5]$ java Boot
+threadOS ver 1.0:
+Type ? for help
+threadOS: a new thread (thread=Thread[Thread-3,2,main] tid=0 pid=-1)
+-->l Shell
+l Shell
+threadOS: a new thread (thread=Thread[Thread-5,2,main] tid=1 pid=0)
+shell[1]% CmdServer &
+CmdServer
+threadOS: a new thread (thread=Thread[Thread-7,2,main] tid=2 pid=1)
+shell[2]% sig4.eecs.wsu.edu  is listening to 5000
+ Plaese waite for connection!
+
+shell[2]% CmdClient 5000
+CmdClient
+threadOS: a new thread (thread=Thread[Thread-9,2,main] tid=3 pid=1)
+the host is: localhost
+cmdclient username: ratefime
+cmdserver username: ratefime
+Authorized connection, now is listening to:39002
+Please enter your message:
+Hello
+server response is: olleH
+Mon Apr 22 20:07:35 PDT 2024
+shell[3]% CmdClient 5000
+CmdClient
+threadOS: a new thread (thread=Thread[Thread-11,2,main] tid=4 pid=1)
+the host is: localhost
+cmdclient username: ratefime
+cmdserver username: ratefime
+Authorized connection, now is listening to:35518
+Please enter your message:
+whoami
+server response is: ratefime
+
+Mon Apr 22 20:07:55 PDT 2024
+shell[4]% CmdClient 5000
+CmdClient
+threadOS: a new thread (thread=Thread[Thread-13,2,main] tid=5 pid=1)
+the host is: localhost
+cmdclient username: ratefime
+cmdserver username: ratefime
+Authorized connection, now is listening to:41345
+Please enter your message:
+date
+server response is: Mon Apr 22 20:08:04 PDT 2024
+
+Mon Apr 22 20:08:04 PDT 2024
+shell[5]% CmdClient 5000
+CmdClient
+threadOS: a new thread (thread=Thread[Thread-15,2,main] tid=6 pid=1)
+the host is: localhost
+cmdclient username: ratefime
+cmdserver username: ratefime
+Authorized connection, now is listening to:38050
+Please enter your message:
+bye
+disconnec!
+Received 'bye' message.
+continue for a new connection
+server response is: null
+shell[6]% CmdClient sig4.eecs.wsu.edu  5000
+CmdClient
+threadOS: a new thread (thread=Thread[Thread-17,2,main] tid=7 pid=1)
+the host is: sig4.eecs.wsu.edu
+cmdclient username: ratefime
+cmdserver username: ratefime
+Authorized connection, now is listening to:34132
+Please enter your message:
+Hello again
+server response is: niaga olleH
+Mon Apr 22 20:08:50 PDT 2024
+shell[7]% CmdClient sig4.eecs.wsu.edu  5000
+CmdClient
+threadOS: a new thread (thread=Thread[Thread-19,2,main] tid=8 pid=1)
+the host is: sig4.eecs.wsu.edu
+cmdclient username: ratefime
+cmdserver username: ratefime
+Authorized connection, now is listening to:39323
+Please enter your message:
+echo Hello again
+server response is: Hello again
+
+Mon Apr 22 20:09:09 PDT 2024
+shell[8]% CmdClient sig4.eecs.wsu.edu  5000
+CmdClient
+threadOS: a new thread (thread=Thread[Thread-21,2,main] tid=9 pid=1)
+the host is: sig4.eecs.wsu.edu
+cmdclient username: ratefime
+cmdserver username: ratefime
+Authorized connection, now is listening to:38126
+Please enter your message:
+ls
+server response is: Boot.class
+Cache.class
+Cache$Entry.class
+CmdClient.class
+CmdClient.java
+CmdServer.class
+CmdServer$ClientHandler.class
+CmdServer.java
+DateClient.class
+DateClient.java
+DateServer.class
+DateServer.java
+Directory.class
+DISK
+Disk.class
+FileSystem.class
+FileTable.class
+FileTableEntry.class
+HelloWorld.class
+Inode.class
+Kernel.class
+Kernel_org.class
+Loader.class
+output.txt
+PingPong.class
+QueueNode.class
+Scheduler.class
+Shell.class
+SuperBlock.class
+SyncQueue.class
+SysLib.class
+TCB.class
+Test2b.class
+Test2c.class
+Test2.class
+Test2d.class
+Test2e.class
+Test3.class
+Test4.class
+Test5.class
+Test6.class
+Test7a.class
+Test7.class
+TestPingPong.class
+TestThread1.class
+TestThread2b.class
+TestThread2c.class
+TestThread2.class
+TestThread2d.class
+TestThread3.class
+
+Mon Apr 22 20:09:16 PDT 2024
+shell[9]% CmdClient sig4.eecs.wsu.edu  5000
+CmdClient
+threadOS: a new thread (thread=Thread[Thread-23,2,main] tid=10 pid=1)
+the host is: sig4.eecs.wsu.edu
+cmdclient username: ratefime
+cmdserver username: ratefime
+Authorized connection, now is listening to:45882
+Please enter your message:
+ls -l
+server response is: total 544
+lrwxrwxrwx 1 ratefime ratefime     34 Apr  6 17:28 Boot.class -> /opt/java/libs/cleanTOS/Boot.class
+lrwxrwxrwx 1 ratefime ratefime     35 Apr  6 17:28 Cache.class -> /opt/java/libs/cleanTOS/Cache.class
+lrwxrwxrwx 1 ratefime ratefime     41 Apr  6 17:28 Cache$Entry.class -> /opt/java/libs/cleanTOS/Cache$Entry.class
+-rw-r--r-- 1 ratefime ratefime   2670 Apr 22 20:06 CmdClient.class
+-rw-r--r-- 1 ratefime ratefime   3523 Apr 22 20:06 CmdClient.java
+-rw-r--r-- 1 ratefime ratefime   3565 Apr 22 20:06 CmdServer.class
+-rw-r--r-- 1 ratefime ratefime   2539 Apr 12 20:02 CmdServer$ClientHandler.class
+-rw-r--r-- 1 ratefime ratefime   6268 Apr 20 19:28 CmdServer.java
+-rw-r--r-- 1 ratefime ratefime   1172 Apr 22 20:06 DateClient.class
+-rw-r--r-- 1 ratefime ratefime    924 Apr 20 18:52 DateClient.java
+-rw-r--r-- 1 ratefime ratefime   1205 Apr 22 20:06 DateServer.class
+-rw-r--r-- 1 ratefime ratefime    962 Apr 16 20:19 DateServer.java
+lrwxrwxrwx 1 ratefime ratefime     39 Apr  6 17:28 Directory.class -> /opt/java/libs/cleanTOS/Directory.class
+-rw-r--r-- 1 ratefime ratefime 512000 Apr 22 20:06 DISK
+lrwxrwxrwx 1 ratefime ratefime     34 Apr  6 17:28 Disk.class -> /opt/java/libs/cleanTOS/Disk.class
+lrwxrwxrwx 1 ratefime ratefime     40 Apr  6 17:28 FileSystem.class -> /opt/java/libs/cleanTOS/FileSystem.class
+lrwxrwxrwx 1 ratefime ratefime     39 Apr  6 17:28 FileTable.class -> /opt/java/libs/cleanTOS/FileTable.class
+lrwxrwxrwx 1 ratefime ratefime     44 Apr  6 17:28 FileTableEntry.class -> /opt/java/libs/cleanTOS/FileTableEntry.class
+lrwxrwxrwx 1 ratefime ratefime     40 Apr  6 17:28 HelloWorld.class -> /opt/java/libs/cleanTOS/HelloWorld.class
+lrwxrwxrwx 1 ratefime ratefime     35 Apr  6 17:28 Inode.class -> /opt/java/libs/cleanTOS/Inode.class
+lrwxrwxrwx 1 ratefime ratefime     36 Apr  6 17:28 Kernel.class -> /opt/java/libs/cleanTOS/Kernel.class
+lrwxrwxrwx 1 ratefime ratefime     40 Apr  6 17:28 Kernel_org.class -> /opt/java/libs/cleanTOS/Kernel_org.class
+lrwxrwxrwx 1 ratefime ratefime     36 Apr  6 17:28 Loader.class -> /opt/java/libs/cleanTOS/Loader.class
+-rw-r--r-- 1 ratefime ratefime      0 Apr 16 17:47 output.txt
+lrwxrwxrwx 1 ratefime ratefime     38 Apr  6 17:28 PingPong.class -> /opt/java/libs/cleanTOS/PingPong.class
+lrwxrwxrwx 1 ratefime ratefime     39 Apr  6 17:28 QueueNode.class -> /opt/java/libs/cleanTOS/QueueNode.class
+lrwxrwxrwx 1 ratefime ratefime     39 Apr  6 17:28 Scheduler.class -> /opt/java/libs/cleanTOS/Scheduler.class
+lrwxrwxrwx 1 ratefime ratefime     35 Apr 16 17:38 Shell.class -> /opt/java/libs/cleanTOS/Shell.class
+lrwxrwxrwx 1 ratefime ratefime     40 Apr  6 17:28 SuperBlock.class -> /opt/java/libs/cleanTOS/SuperBlock.class
+lrwxrwxrwx 1 ratefime ratefime     39 Apr  6 17:28 SyncQueue.class -> /opt/java/libs/cleanTOS/SyncQueue.class
+lrwxrwxrwx 1 ratefime ratefime     36 Apr  6 17:28 SysLib.class -> /opt/java/libs/cleanTOS/SysLib.class
+lrwxrwxrwx 1 ratefime ratefime     33 Apr  6 17:28 TCB.class -> /opt/java/libs/cleanTOS/TCB.class
+lrwxrwxrwx 1 ratefime ratefime     36 Apr  6 17:28 Test2b.class -> /opt/java/libs/cleanTOS/Test2b.class
+lrwxrwxrwx 1 ratefime ratefime     36 Apr  6 17:28 Test2c.class -> /opt/java/libs/cleanTOS/Test2c.class
+lrwxrwxrwx 1 ratefime ratefime     35 Apr  6 17:28 Test2.class -> /opt/java/libs/cleanTOS/Test2.class
+lrwxrwxrwx 1 ratefime ratefime     36 Apr  6 17:28 Test2d.class -> /opt/java/libs/cleanTOS/Test2d.class
+lrwxrwxrwx 1 ratefime ratefime     36 Apr  6 17:28 Test2e.class -> /opt/java/libs/cleanTOS/Test2e.class
+lrwxrwxrwx 1 ratefime ratefime     35 Apr  6 17:28 Test3.class -> /opt/java/libs/cleanTOS/Test3.class
+lrwxrwxrwx 1 ratefime ratefime     35 Apr  6 17:28 Test4.class -> /opt/java/libs/cleanTOS/Test4.class
+lrwxrwxrwx 1 ratefime ratefime     35 Apr  6 17:28 Test5.class -> /opt/java/libs/cleanTOS/Test5.class
+lrwxrwxrwx 1 ratefime ratefime     35 Apr  6 17:28 Test6.class -> /opt/java/libs/cleanTOS/Test6.class
+lrwxrwxrwx 1 ratefime ratefime     36 Apr  6 17:28 Test7a.class -> /opt/java/libs/cleanTOS/Test7a.class
+lrwxrwxrwx 1 ratefime ratefime     35 Apr  6 17:28 Test7.class -> /opt/java/libs/cleanTOS/Test7.class
+lrwxrwxrwx 1 ratefime ratefime     42 Apr  6 17:28 TestPingPong.class -> /opt/java/libs/cleanTOS/TestPingPong.class
+lrwxrwxrwx 1 ratefime ratefime     41 Apr  6 17:28 TestThread1.class -> /opt/java/libs/cleanTOS/TestThread1.class
+lrwxrwxrwx 1 ratefime ratefime     42 Apr  6 17:28 TestThread2b.class -> /opt/java/libs/cleanTOS/TestThread2b.class
+lrwxrwxrwx 1 ratefime ratefime     42 Apr  6 17:28 TestThread2c.class -> /opt/java/libs/cleanTOS/TestThread2c.class
+lrwxrwxrwx 1 ratefime ratefime     41 Apr  6 17:28 TestThread2.class -> /opt/java/libs/cleanTOS/TestThread2.class
+lrwxrwxrwx 1 ratefime ratefime     42 Apr  6 17:28 TestThread2d.class -> /opt/java/libs/cleanTOS/TestThread2d.class
+lrwxrwxrwx 1 ratefime ratefime     41 Apr  6 17:28 TestThread3.class -> /opt/java/libs/cleanTOS/TestThread3.class
+
+Mon Apr 22 20:09:24 PDT 2024
+shell[10]% CmdClient sig4.eecs.wsu.edu  5000
+CmdClient
+threadOS: a new thread (thread=Thread[Thread-25,2,main] tid=11 pid=1)
+the host is: sig4.eecs.wsu.edu
+cmdclient username: ratefime
+cmdserver username: ratefime
+Authorized connection, now is listening to:37558
+Please enter your message:
+ps ux
+server response is: USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+ratefime   301  0.0  0.0 167588  3112 ?        S    19:52   0:00 sshd: ratefime@notty
+ratefime   307  0.0  0.0 119664  1844 ?        Ss   19:52   0:00 -bash
+ratefime   417  0.0  0.0 113676  2012 ?        S    19:52   0:00 bash
+ratefime   467  0.4  0.5 998924 86852 ?        Sl   19:52   0:04 /net/ugrads/ratefime/pvt/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/node --dns-result-order=ipv4first /net/ugrads/ratefime/pvt/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/out/bootstrap-fork --type=extensionHost --transformURIs --useHostProxy=false
+ratefime   478  0.0  0.2 860084 34568 ?        Sl   19:52   0:00 /net/ugrads/ratefime/pvt/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/node /net/ugrads/ratefime/pvt/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/out/bootstrap-fork --type=fileWatcher
+ratefime   533  0.0  0.0 121384  3700 pts/4    Ss+  19:52   0:00 /bin/bash --init-file /net/ugrads/ratefime/pvt/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+ratefime  1057  0.0  0.0 121384  3848 pts/5    Ss   19:54   0:00 /bin/bash --init-file /net/ugrads/ratefime/pvt/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+ratefime  3005  0.2  0.3 7239748 59424 pts/5   Sl+  20:07   0:00 java Boot
+ratefime  3729  0.0  0.0 159700  2024 pts/5    R+   20:09   0:00 ps ux
+ratefime 31814  0.0  0.0 113284  1416 ?        S    19:52   0:00 sh /net/ugrads/ratefime/pvt/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/bin/code-server --start-server --host=127.0.0.1 --accept-server-license-terms --enable-remote-auto-shutdown --port=0 --telemetry-level all --connection-token-file /net/ugrads/ratefime/pvt/.vscode-server/.0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2.token
+ratefime 31826  0.6  0.5 990460 92232 ?        Sl   19:52   0:07 /net/ugrads/ratefime/pvt/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/node /net/ugrads/ratefime/pvt/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/out/server-main.js --start-server --host=127.0.0.1 --accept-server-license-terms --enable-remote-auto-shutdown --port=0 --telemetry-level all --connection-token-file /net/ugrads/ratefime/pvt/.vscode-server/.0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2.token
+ratefime 32690  0.2  0.2 743908 46988 ?        Sl   19:52   0:02 /net/ugrads/ratefime/pvt/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/node /net/ugrads/ratefime/pvt/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/out/bootstrap-fork --type=ptyHost --logsPath /net/ugrads/ratefime/pvt/.vscode-server/data/logs/20240422T195228
+
+Mon Apr 22 20:09:32 PDT 2024
+shell[12]% CmdClient sig4.eecs.wsu.edu  5000
+CmdClient
+threadOS: a new thread (thread=Thread[Thread-29,2,main] tid=13 pid=1)
+the host is: sig4.eecs.wsu.edu
+cmdclient username: ratefime
+cmdserver username: ratefime
+Authorized connection, now is listening to:45666
+Please enter your message:
+man pkill
+server response is: PGREP(1)                         User Commands                        PGREP(1)
+
+
+
+NAME
+       pgrep,  pkill  -  look  up  or signal processes based on name and other
+       attributes
+
+SYNOPSIS
+       pgrep [options] pattern
+       pkill [options] pattern
+
+DESCRIPTION
+       pgrep looks through the  currently  running  processes  and  lists  the
+       process IDs which match the selection criteria to stdout.  All the cri‐
+       teria have to match.  For example,
+
+              $ pgrep -u root sshd
+
+       will only list the processes called sshd AND owned  by  root.   On  the
+       other hand,
+
+              $ pgrep -u root,daemon
+
+       will list the processes owned by root OR daemon.
+
+       pkill  will  send  the  specified  signal  (by default SIGTERM) to each
+       process instead of listing them on stdout.
+
+OPTIONS
+       -signal
+       --signal signal
+              Defines the signal to send to each matched process.  Either  the
+              numeric or the symbolic signal name can be used.  (pkill only.)
+
+       -c, --count
+              Suppress  normal  output; instead print a count of matching pro‐
+              cesses.  When count does not match anything, e.g. returns  zero,
+              the command will return non-zero value.
+
+       -d, --delimiter delimiter
+              Sets  the  string  used to delimit each process ID in the output
+              (by default a newline).  (pgrep only.)
+
+       -f, --full
+              The pattern is normally only matched against the  process  name.
+              When -f is set, the full command line is used.
+
+       -g, --pgroup pgrp,...
+              Only  match  processes in the process group IDs listed.  Process
+              group 0 is translated into pgrep's or pkill's own process group.
+
+       -G, --group gid,...
+              Only match processes whose real group ID is listed.  Either  the
+              numerical or symbolical value may be used.
+
+       -l, --list-name
+              List the process name as well as the process ID.  (pgrep only.)
+
+       -a, --list-full
+              List  the  full  command line as well as the process ID.  (pgrep
+              only.)
+
+       -n, --newest
+              Select only the newest (most recently started) of  the  matching
+              processes.
+
+       -o, --oldest
+              Select  only the oldest (least recently started) of the matching
+              processes.
+
+       -P, --parent ppid,...
+              Only match processes whose parent process ID is listed.
+
+       -s, --session sid,...
+              Only match processes whose process session ID is  listed.   Ses‐
+              sion ID 0 is translated into pgrep's or pkill's own session ID.
+
+       -t, --terminal term,...
+              Only  match processes whose controlling terminal is listed.  The
+              terminal name should be specified without the "/dev/" prefix.
+
+       -u, --euid euid,...
+              Only match processes whose effective user ID is listed.   Either
+              the numerical or symbolical value may be used.
+
+       -U, --uid uid,...
+              Only  match  processes whose real user ID is listed.  Either the
+              numerical or symbolical value may be used.
+
+       -v, --inverse
+              Negates the matching.  This option is usually  used  in  pgrep's
+              context.   In  pkill's  context  the short option is disabled to
+              avoid accidental usage of the option.
+
+       -w, --lightweight
+              Shows all thread ids instead of pids  in  pgrep's  context.   In
+              pkill's context this option is disabled.
+
+       -x, --exact
+              Only match processes whose names (or command line if -f is spec‐
+              ified) exactly match the pattern.
+
+       -F, --pidfile file
+              Read PID's from file.  This option is perhaps  more  useful  for
+              pkill than pgrep.
+
+       -L, --logpidfile
+              Fail if pidfile (see -F) not locked.
+
+       --ns pid
+              Match  processes that belong to the same namespaces. Required to
+              run as root to match processes from other  users.  See  --nslist
+              for how to limit which namespaces to match.
+
+       --nslist name,...
+              Match  only  the provided namespaces. Available namespaces: ipc,
+              mnt, net, pid, user,uts.
+
+       -V, --version
+              Display version information and exit.
+
+       -h, --help
+              Display help and exit.
+
+OPERANDS
+       pattern
+              Specifies an Extended Regular Expression  for  matching  against
+              the process names or command lines.
+
+EXAMPLES
+       Example 1: Find the process ID of the named daemon:
+
+              $ pgrep -u root named
+
+       Example 2: Make syslog reread its configuration file:
+
+              $ pkill -HUP syslogd
+
+       Example 3: Give detailed information on all xterm processes:
+
+              $ ps -fp $(pgrep -d, -x xterm)
+
+       Example 4: Make all netscape processes run nicer:
+
+              $ renice +4 $(pgrep netscape)
+
+EXIT STATUS
+       0      One or more processes matched the criteria.
+       1      No processes matched.
+       2      Syntax error in the command line.
+       3      Fatal error: out of memory etc.
+
+NOTES
+       The  process  name  used  for  matching is limited to the 15 characters
+       present in the output of /proc/pid/stat.  Use the -f  option  to  match
+       against the complete command line, /proc/pid/cmdline.
+
+       The running pgrep or pkill process will never report itself as a match.
+
+BUGS
+       The  options  -n and -o and -v can not be combined.  Let me know if you
+       need to do this.
+
+       Defunct processes are reported.
+
+
+SEE ALSO
+       ps(1), regex(7), signal(7), killall(1), skill(1), kill(1), kill(2)
+
+STANDARDS
+       pkill and pgrep were introduced in Sun's Solaris 7.   This  implementa‐
+       tion is fully compatible.
+
+AUTHOR
+       Kjetil Torgrim Homme ⟨kjetilho@ifi.uio.no⟩
+
+REPORTING BUGS
+       Please send bug reports to ⟨procps@freelists.org⟩
+
+
+
+procps-ng                        October 2012                         PGREP(1)
+
+Mon Apr 22 20:10:16 PDT 2024
+shell[13]% CmdClient sig4.eecs.wsu.edu  5000
+CmdClient
+threadOS: a new thread (thread=Thread[Thread-31,2,main] tid=14 pid=1)
+the host is: sig4.eecs.wsu.edu
+cmdclient username: ratefime
+cmdserver username: ratefime
+Authorized connection, now is listening to:35777
+Please enter your message:
+die
+disconnect and exit
+shell[14]% Received 'die' message! Exiting server.
+
+shell[14]% exit
+exit
+-->q
+
+[ratefime@sig4 prog5]$
+
+
+
+
+
+
+
